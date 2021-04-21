@@ -471,6 +471,8 @@ while True:
             Abhash_lib.add_book(n)
             s += 1
         elif keyboard.is_pressed("3"):
+            n = input(f"\nEnter Book Name or Book I.D.(Book I.D. should start with # symbol):\n")
+            lend_return_renew.lend_book(n)
             s += 1
         elif keyboard.is_pressed("4"):
             s += 1
