@@ -10,6 +10,7 @@ import datetime
 import random
 import time
 import os
+import keyboard
 import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
@@ -456,13 +457,22 @@ class administrator(Abhash_lib,lend_return_renew,book_search):
                 print(f"{Fore.RED}Incorrect password")
 
 
-# n = input("enter\n")
-# if n[0]=="#" and len(n)==8:
-#     lend_return_renew.return_renew_book(n)
-# else:
-#     print("Invalid entry")
-administrator.book_list()
-# n=input("enter\n")
-# Abhash_lib.add_book(n)
-
-
+print(f"Welcome to Abhash's Library")
+while True:
+    print(f"To list book press [1], to add book press [2], to borrow book press [3], to return/renew book press [4] and "
+          "to search book press[5]")
+    s = 0
+    while s<1:
+        if keyboard.is_pressed("1"):
+            Abhash_lib.book_list()
+            s+=1
+        elif keyboard.is_pressed("2"):
+            n = input(f"\nEnter full book name:\n")
+            Abhash_lib.add_book(n)
+            s += 1
+        elif keyboard.is_pressed("3"):
+            s += 1
+        elif keyboard.is_pressed("4"):
+            s += 1
+        elif keyboard.is_pressed("5"):
+            s += 1
