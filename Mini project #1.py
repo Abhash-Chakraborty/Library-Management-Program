@@ -475,6 +475,8 @@ while True:
             lend_return_renew.lend_book(n)
             s += 1
         elif keyboard.is_pressed("4"):
+            n = input(f"\nPlease enter Book I.D.(Book I.D. should start with # symbol):\n")
+            lend_return_renew.return_renew_book(n)
             s += 1
         elif keyboard.is_pressed("5"):
             s += 1
