@@ -10,6 +10,7 @@ import datetime
 import random
 import time
 import os
+import pyfiglet
 import keyboard
 import colorama
 from colorama import Fore, Back, Style
@@ -455,15 +456,29 @@ class administrator(Abhash_lib,lend_return_renew,book_search):
 
             else:
                 print(f"{Fore.RED}Incorrect password")
+print(f"{Fore.BLACK}{Style.DIM}Project Library[Version 0.01.160421]")
+print(f"{Fore.BLACK}{Style.DIM}©2021 Abhash Chakraborty. Some right reserved")
 
-
-print(f"Welcome to Abhash's Library")
+P = pyfiglet.figlet_format("WELCOME TO XYZ LIBRARY", font="digital")
+print(f"{Style.BRIGHT}{Fore.LIGHTWHITE_EX}{P}")
 while True:
-    print(f"\n\nTo list book press [1], to add book press [2], to borrow book press [3], to return/renew book press [4] and "
-          "to search book press[5]")
+    time.sleep(3)
+    print(f"{Fore.LIGHTRED_EX}{Style.BRIGHT}+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
+
+    print(f"{Fore.LIGHTYELLOW_EX}"
+          f"           *To list book press [1]\n"
+          f"           *To add book press [2]\n"
+          f"           *To borrow book press [3]\n"
+          f"           *To return/renew book press [4]\n"
+          f"           *To search book press [5]\n"
+          f"           You can enter [q] to cancel any operation\n"
+          f"           Press [Esc] to exit library")
+    print(
+        f"{Fore.LIGHTRED_EX}{Style.BRIGHT}+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
     s = 0
     while s<1:
         if keyboard.is_pressed("1"):
+            print()
             Abhash_lib.book_list()
             s+=1
         elif keyboard.is_pressed("2"):
@@ -482,3 +497,64 @@ while True:
             n = input(f"\nEnter keywords to search book:\n")
             book_search.book_search(n)
             s += 1
+        elif keyboard.is_pressed("Shift + Ctrl + Alt + a"):
+            n = input(f"\nEnter password:\n")
+            if n=="123456":
+                k=0
+                while k<1:
+                    time.sleep(2)
+                    t = 0
+                    print(f"Your are in administrator mode")
+                    print(
+                        f"\nTo list book press [1], to add book press [2], to borrow book press [3], to return/renew book press [4], "
+                        "to search book press [5], to read lend book press [6], to read lend book details press [7], "
+                        "to read library book details press [8], to remove book press [9]")
+                    while t<1:
+                        if keyboard.is_pressed("1"):
+                            administrator.book_list()
+                            t+=1
+
+                        elif keyboard.is_pressed("2"):
+                            n = input(f"\nEnter full book name:\n")
+                            administrator.add_book(n)
+                            t += 1
+
+                        elif keyboard.is_pressed("3"):
+                            n = input(f"\nEnter Book Name or Book I.D.(Book I.D. should start with # symbol):\n")
+                            administrator.lend_book(n)
+                            t += 1
+
+                        elif keyboard.is_pressed("4"):
+                            n = input(f"\nPlease enter Book I.D.(Book I.D. should start with # symbol):\n")
+                            administrator.return_renew_book(n)
+                            t += 1
+
+                        elif keyboard.is_pressed("5"):
+                            n = input(f"\nEnter keywords to search book:\n")
+                            administrator.book_search(n)
+                            t += 1
+
+                        elif keyboard.is_pressed("6"):
+                            administrator.read_lend()
+                            t+=1
+
+                        elif keyboard.is_pressed("7"):
+                            administrator.lend_bookdet()
+                            t+=1
+
+                        elif keyboard.is_pressed("8"):
+                            administrator.lib_bookdet()
+                            t += 1
+
+                        elif keyboard.is_pressed("9"):
+                            n = input(f"\nEnter Book I.D. to remove book:\n")
+                            administrator.remove_book(n)
+                            t += 1
+
+                        elif keyboard.is_pressed("Esc"):
+                            k+=1
+                            break
+
+            else:
+                print("Wrong password")
+                break
