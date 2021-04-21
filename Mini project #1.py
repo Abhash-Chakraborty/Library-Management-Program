@@ -459,7 +459,7 @@ class administrator(Abhash_lib,lend_return_renew,book_search):
 
 print(f"Welcome to Abhash's Library")
 while True:
-    print(f"To list book press [1], to add book press [2], to borrow book press [3], to return/renew book press [4] and "
+    print(f"\n\nTo list book press [1], to add book press [2], to borrow book press [3], to return/renew book press [4] and "
           "to search book press[5]")
     s = 0
     while s<1:
@@ -479,4 +479,6 @@ while True:
             lend_return_renew.return_renew_book(n)
             s += 1
         elif keyboard.is_pressed("5"):
+            n = input(f"\nEnter keywords to search book:\n")
+            book_search.book_search(n)
             s += 1
