@@ -36,7 +36,9 @@ class Abhash_lib:
                 print(f"{Fore.LIGHTYELLOW_EX}{i + 1}. {Fore.LIGHTMAGENTA_EX}{e[0:13]}{Fore.LIGHTCYAN_EX}{e[13::]}", end='')
         print(
             f"{Fore.LIGHTRED_EX}{Style.DIM}___________________________________________________________________________")
-        print(f"\n{Fore.LIGHTCYAN_EX}Total {Fore.LIGHTMAGENTA_EX}{z} {Fore.LIGHTCYAN_EX}Books present in the library")
+        print(f"{Fore.LIGHTCYAN_EX}                 Total {Fore.LIGHTMAGENTA_EX}{z} {Fore.LIGHTCYAN_EX}Books present in the library")
+        print(
+            f"{Fore.LIGHTRED_EX}{Style.DIM}___________________________________________________________________________")
 
     #final with style
     def add_book(self):
@@ -87,15 +89,27 @@ class lend_return_renew:
                         print(f"{Fore.LIGHTYELLOW_EX}{s+r+1}.         {Fore.LIGHTRED_EX}Not   available {Fore.LIGHTMAGENTA_EX}{i[0:13]}{Fore.LIGHTCYAN_EX}{i[13::]}", end='')
                         r += 1
             if (s+r)==0:
-                print(f"{Fore.RED}                                    No record found\n")
+                print(f"{Fore.RED}                                      No record found")
+                print(
+                    f"{Fore.LIGHTRED_EX}{Style.DIM}____________________________________________________________________________________________________")
             elif s==0:
-                print(f"{Fore.CYAN}                             Sorry no book is Available\n")
+                print(
+                    f"{Fore.LIGHTRED_EX}{Style.DIM}____________________________________________________________________________________________________")
+                print(f"{Fore.CYAN}                               Sorry no book is Available")
+                print(
+                    f"{Fore.LIGHTRED_EX}{Style.DIM}____________________________________________________________________________________________________")
             else:
                 r = e.split("\n")
                 if s==1:
-                    print(f"\n{Fore.LIGHTGREEN_EX}{s} Book is Available\n")
+                    print(
+                        f"{Fore.LIGHTRED_EX}{Style.DIM}____________________________________________________________________________________________________")
+                    print(f"                                  {Fore.LIGHTGREEN_EX}{s} Book is Available")
                 else:
-                    print(f"\n{Fore.LIGHTGREEN_EX}{s} Books are Available\n")
+                    print(
+                        f"{Fore.LIGHTRED_EX}{Style.DIM}____________________________________________________________________________________________________")
+                    print(f"                                  {Fore.LIGHTGREEN_EX}{s} Books are Available")
+                print(
+                    f"{Fore.LIGHTRED_EX}{Style.DIM}____________________________________________________________________________________________________\n")
 
 
                 if self[0]=="#" and len(self)==8:
@@ -129,8 +143,12 @@ class lend_return_renew:
                                                             f"Username - {name.upper()}\nBook Name - {i[21::]}\n"
                                                             f"Postal code = {postal_code}         Mobile No. = {mobile}         "
                                                             f"City = {city.upper()}\n")
-                                                print(f"\n{Fore.LIGHTGREEN_EX}Book has been lend to you for {Fore.LIGHTMAGENTA_EX}7 days{Fore.LIGHTGREEN_EX}. Please return/renew the "
+                                                print(
+                                                    f"{Fore.LIGHTRED_EX}{Style.DIM}____________________________________________________________________________________________________")
+                                                print(f"{Fore.LIGHTGREEN_EX}Book has been lend to you for {Fore.LIGHTMAGENTA_EX}7 days{Fore.LIGHTGREEN_EX}. Please return/renew the "
                                                       f"book before {Fore.LIGHTMAGENTA_EX}{datetime.date.today() + datetime.timedelta(days=8)}{Fore.LIGHTGREEN_EX}.")
+                                                print(
+                                                    f"{Fore.LIGHTRED_EX}{Style.DIM}____________________________________________________________________________________________________")
                                             elif con=="n" or con=="N":
                                                 print(f"{Fore.RED}Operation canceled...")
 
@@ -173,8 +191,12 @@ class lend_return_renew:
                                                                     f"Username - {name.upper()}\nBook Name - {i[21::]}\n"
                                                                     f"Postal code = {postal_code}         Mobile No. = {mobile}         "
                                                                     f"City = {city.upper()}\n")
-                                                        print(f"\n{Fore.LIGHTGREEN_EX}Book has been lend to you for {Fore.LIGHTMAGENTA_EX}7 days{Fore.LIGHTGREEN_EX}. Please return/renew the "
+                                                        print(
+                                                            f"{Fore.LIGHTRED_EX}{Style.DIM}____________________________________________________________________________________________________")
+                                                        print(f"{Fore.LIGHTGREEN_EX}Book has been lend to you for {Fore.LIGHTMAGENTA_EX}7 days{Fore.LIGHTGREEN_EX}. Please return/renew the "
                                                               f"book before {Fore.LIGHTMAGENTA_EX}{datetime.date.today() + datetime.timedelta(days=8)}{Fore.LIGHTGREEN_EX}.")
+                                                        print(
+                                                            f"{Fore.LIGHTRED_EX}{Style.DIM}____________________________________________________________________________________________________")
                                                     elif con == "n" or con == "N":
                                                         print(f"{Fore.RED}Operation canceled...")
 
@@ -232,7 +254,11 @@ class lend_return_renew:
                                     f"          {datetime.datetime.today() + datetime.timedelta(days=8)}"
                                     f"          Return\n"
                                     f"Username - {name.upper()}\nBook Name - {i[21::]}\n")
-                            print(f"\n{Fore.LIGHTGREEN_EX}Thank you for borrowing book from our library. We hope you liked our services.")
+                            print(
+                                f"\n{Fore.LIGHTRED_EX}{Style.DIM}_______________________________________________________________________________")
+                            print(f"{Fore.LIGHTGREEN_EX}Thank you for borrowing book from our library. We hope you liked our services.")
+                            print(
+                                f"{Fore.LIGHTRED_EX}{Style.DIM}_______________________________________________________________________________")
                     x.close()
                     q.close()
                     os.remove("lendbook.txt")
@@ -264,8 +290,12 @@ class lend_return_renew:
                                                 f"Postal code = {postal_code}         Mobile No. = {mobile}         "
                                                 f"City = {city.upper()}\n")
                                         print(
-                                            f"\n{Fore.LIGHTGREEN_EX}Book has been lend to you for {Fore.LIGHTMAGENTA_EX}7 days{Fore.LIGHTGREEN_EX}. Please return/renew the "
+                                            f"\n{Fore.LIGHTRED_EX}{Style.DIM}______________________________________________________________________________________")
+                                        print(
+                                            f"{Fore.LIGHTGREEN_EX}Book has been lend to you for {Fore.LIGHTMAGENTA_EX}7 days{Fore.LIGHTGREEN_EX}. Please return/renew the "
                                             f"book before {Fore.LIGHTMAGENTA_EX}{datetime.date.today() + datetime.timedelta(days=8)}{Fore.LIGHTGREEN_EX}.")
+                                        print(
+                                            f"{Fore.LIGHTRED_EX}{Style.DIM}______________________________________________________________________________________")
                                         q.close()
                                         break
                         elif s==(len(r)-1):
@@ -361,6 +391,8 @@ class book_search:
                 else:
                     w += 1
                 l += 1
+            print(
+                f"{Fore.LIGHTRED_EX}{Style.DIM}___________________________________________________________________________")
             if w != (s - 1):
                 print(f"\n{Fore.LIGHTRED_EX}{Style.BRIGHT}*Note{Fore.BLUE} -{Fore.CYAN} "
                       f"S.no. is given according to book position in library")
@@ -456,25 +488,30 @@ class administrator(Abhash_lib,lend_return_renew,book_search):
 
             else:
                 print(f"{Fore.RED}Incorrect password")
+
+
 print(f"{Fore.BLACK}{Style.DIM}Project Library[Version 0.01.160421]")
 print(f"{Fore.BLACK}{Style.DIM}©2021 Abhash Chakraborty. Some right reserved")
+time.sleep(1)
 
 P = pyfiglet.figlet_format("WELCOME TO XYZ LIBRARY", font="digital")
 print(f"{Style.BRIGHT}{Fore.LIGHTWHITE_EX}{P}")
+
+
 while True:
-    time.sleep(3)
-    print(f"{Fore.LIGHTRED_EX}{Style.BRIGHT}+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
+    time.sleep(1)
+    print(f"{Fore.LIGHTRED_EX}{Style.BRIGHT}\n\n+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
 
     print(f"{Fore.LIGHTYELLOW_EX}"
-          f"           *To list book press [1]\n"
-          f"           *To add book press [2]\n"
-          f"           *To borrow book press [3]\n"
-          f"           *To return/renew book press [4]\n"
-          f"           *To search book press [5]\n"
-          f"           You can enter [q] to cancel any operation\n"
-          f"           Press [Esc] to exit library")
+          f"           *To list book press [{Fore.LIGHTRED_EX}1{Fore.LIGHTYELLOW_EX}]\n"
+          f"           *To add book press [{Fore.LIGHTRED_EX}2{Fore.LIGHTYELLOW_EX}]\n"
+          f"           *To borrow book press [{Fore.LIGHTRED_EX}3{Fore.LIGHTYELLOW_EX}]\n"
+          f"           *To return/renew book press [{Fore.LIGHTRED_EX}4{Fore.LIGHTYELLOW_EX}]\n"
+          f"           *To search book press [{Fore.LIGHTRED_EX}5{Fore.LIGHTYELLOW_EX}]\n"
+          f"           You can enter [{Fore.LIGHTRED_EX}q{Fore.LIGHTYELLOW_EX}] to cancel any operation\n"
+          f"           Press [{Fore.LIGHTRED_EX}Esc{Fore.LIGHTYELLOW_EX}] to exit library")
     print(
-        f"{Fore.LIGHTRED_EX}{Style.BRIGHT}+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
+        f"{Fore.LIGHTRED_EX}{Style.BRIGHT}+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
     s = 0
     while s<1:
         if keyboard.is_pressed("1"):
@@ -482,23 +519,23 @@ while True:
             Abhash_lib.book_list()
             s+=1
         elif keyboard.is_pressed("2"):
-            n = input(f"\nEnter full book name:\n")
+            n = input(f"\n{Fore.LIGHTBLUE_EX}Enter full Book Name:\n")
             Abhash_lib.add_book(n)
             s += 1
         elif keyboard.is_pressed("3"):
-            n = input(f"\nEnter Book Name or Book I.D.(Book I.D. should start with # symbol):\n")
-            lend_return_renew.lend_book(n)
+            n = input(f"\n{Fore.LIGHTBLUE_EX}Enter Book Name or Book I.D.({Fore.LIGHTRED_EX}Book I.D. should start with # symbol{Fore.LIGHTBLUE_EX}):\n")
+            lend_return_renew.lend_book(n.upper())
             s += 1
         elif keyboard.is_pressed("4"):
-            n = input(f"\nPlease enter Book I.D.(Book I.D. should start with # symbol):\n")
+            n = input(f"\n{Fore.LIGHTBLUE_EX}Please enter Book I.D.({Fore.LIGHTRED_EX}Book I.D. should start with # symbol{Fore.LIGHTBLUE_EX}):\n")
             lend_return_renew.return_renew_book(n)
             s += 1
         elif keyboard.is_pressed("5"):
-            n = input(f"\nEnter keywords to search book:\n")
+            n = input(f"\n{Fore.LIGHTBLUE_EX}Enter keywords to search book:\n")
             book_search.book_search(n)
             s += 1
         elif keyboard.is_pressed("Shift + Ctrl + Alt + a"):
-            n = input(f"\nEnter password:\n")
+            n = input(f"\n{Fore.LIGHTBLUE_EX}Enter password:\n")
             if n=="123456":
                 k=0
                 while k<1:
@@ -509,6 +546,18 @@ while True:
                         f"\nTo list book press [1], to add book press [2], to borrow book press [3], to return/renew book press [4], "
                         "to search book press [5], to read lend book press [6], to read lend book details press [7], "
                         "to read library book details press [8], to remove book press [9]")
+                    print(f"{Fore.LIGHTYELLOW_EX}"
+                          f"           *To list book press [{Fore.LIGHTRED_EX}1{Fore.LIGHTYELLOW_EX}]\n"
+                          f"           *To add book press [{Fore.LIGHTRED_EX}2{Fore.LIGHTYELLOW_EX}]\n"
+                          f"           *To borrow book press [{Fore.LIGHTRED_EX}3{Fore.LIGHTYELLOW_EX}]\n"
+                          f"           *To return/renew book press [{Fore.LIGHTRED_EX}4{Fore.LIGHTYELLOW_EX}]\n"
+                          f"           *To search book press [{Fore.LIGHTRED_EX}5{Fore.LIGHTYELLOW_EX}]\n"
+                          f"           *To read lend book press [{Fore.LIGHTRED_EX}6{Fore.LIGHTYELLOW_EX}]\n"
+                          f"           *To read lend book details press [{Fore.LIGHTRED_EX}7{Fore.LIGHTYELLOW_EX}]\n"
+                          f"           *To read library book details press [{Fore.LIGHTRED_EX}8{Fore.LIGHTYELLOW_EX}]\n"
+                          f"           *To remove book press [{Fore.LIGHTRED_EX}9{Fore.LIGHTYELLOW_EX}]\n"
+                          f"           You can enter [{Fore.LIGHTRED_EX}q{Fore.LIGHTYELLOW_EX}] to cancel any operation\n"
+                          f"           Press [{Fore.LIGHTRED_EX}Esc{Fore.LIGHTYELLOW_EX}] to exit library")
                     while t<1:
                         if keyboard.is_pressed("1"):
                             administrator.book_list()
@@ -556,5 +605,9 @@ while True:
                             break
 
             else:
-                print("Wrong password")
+                print(f"{Fore.RED}Wrong password")
                 break
+        elif keyboard.is_pressed("Esc"):
+            break
+    if keyboard.is_pressed("Esc"):
+        break
