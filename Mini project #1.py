@@ -7,6 +7,7 @@
 
 # a=1
 import datetime
+from getpass import getpass
 import random
 import time
 import os
@@ -47,11 +48,13 @@ class Abhash_lib:
         s = a.split(" ")[1]
         q = s.split(".")[0]
         x = q.split(":")
-        writer = input(f"{Fore.LIGHTBLUE_EX}Enter writer's name:\n")
+        print(f"{Fore.LIGHTBLUE_EX}Enter writer's name:")
+        writer = input()
         if writer=="q" or writer=="Q":
             print(f"{Fore.RED}Quiting...")
         else:
-            user = input(f"{Fore.LIGHTBLUE_EX}Enter your full name:\n")
+            print(f"{Fore.LIGHTBLUE_EX}Enter your full name:")
+            user = input()
             if user == "q" or user == "Q":
                 print(f"{Fore.RED}Quiting...")
             else:
@@ -116,23 +119,28 @@ class lend_return_renew:
                     o = self
                     for i in r:
                         if o in i:
-                            name = input(f"{Fore.LIGHTBLUE_EX}Enter your full name:\n")
+                            print(f"{Fore.LIGHTBLUE_EX}Enter your full name:")
+                            name = input()
                             if name == "q" or name == "Q":
                                 print(f"{Fore.RED}Quiting...")
                             else:
-                                postal_code = input(f"{Fore.LIGHTBLUE_EX}Enter your 6 digits postal pin code:\n")
+                                print(f"{Fore.LIGHTBLUE_EX}Enter your 6 digits postal pin code:")
+                                postal_code = input()
                                 if postal_code == "q" or postal_code == "Q" or len(postal_code)!=6:
                                     print(f"{Fore.RED}Quiting...")
                                 else:
-                                    city = input(f"{Fore.LIGHTBLUE_EX}Enter name of your city:\n")
+                                    print(f"{Fore.LIGHTBLUE_EX}Enter name of your city:")
+                                    city = input()
                                     if city == "q" or city == "Q":
                                         print(f"{Fore.RED}Quiting...")
                                     else:
-                                        mobile = input(f"{Fore.LIGHTBLUE_EX}Enter your 10 digits mobile no.:\n")
+                                        print(f"{Fore.LIGHTBLUE_EX}Enter your 10 digits mobile no.:")
+                                        mobile = input()
                                         if mobile == "q" or mobile == "Q" or len(mobile)!=10:
                                             print(f"{Fore.RED}Quiting...")
                                         else:
-                                            con = input(f"{Fore.LIGHTRED_EX}Do you want to continue y/n?\n")
+                                            print(f"{Fore.LIGHTRED_EX}Do you want to continue y/n?")
+                                            con = input()
                                             if con=="y" or con=="Y":
                                                 with open("lendbook.txt", "a") as f:
                                                     f.write(f"{i}\n")
@@ -155,7 +163,8 @@ class lend_return_renew:
                 else:
                     s = 0
                     while s<2:
-                        o = input(f"\n{Fore.LIGHTBLUE_EX}Please enter Book I.D. to lend book({Fore.LIGHTRED_EX}Start with # sign{Fore.LIGHTBLUE_EX}):\n")
+                        print(f"\n{Fore.LIGHTBLUE_EX}Please enter Book I.D. to lend book({Fore.LIGHTRED_EX}Start with # sign{Fore.LIGHTBLUE_EX}):")
+                        o = input()
                         m = 0
                         if o == "q" or o == "Q":
                             print(f"{Fore.RED}Quiting...")
@@ -164,23 +173,28 @@ class lend_return_renew:
                         if o[0]=="#" and len(o)==8:
                             for i in r:
                                 if o in i:
-                                    name = input(f"{Fore.LIGHTBLUE_EX}Enter your full name:\n")
+                                    print(f"{Fore.LIGHTBLUE_EX}Enter your full name:")
+                                    name = input()
                                     if name == "q" or name == "Q":
                                         print(f"{Fore.RED}Quiting...")
                                     else:
-                                        postal_code = input(f"{Fore.LIGHTBLUE_EX}Enter your 6 digits postal pin code:\n")
+                                        print(f"{Fore.LIGHTBLUE_EX}Enter your 6 digits postal pin code:")
+                                        postal_code = input()
                                         if postal_code == "q" or postal_code == "Q" or len(postal_code)!=6:
                                             print(f"{Fore.RED}Quiting...")
                                         else:
-                                            city = input(f"{Fore.LIGHTBLUE_EX}Enter name of your city:\n")
+                                            print(f"{Fore.LIGHTBLUE_EX}Enter name of your city:")
+                                            city = input()
                                             if city == "q" or city == "Q":
                                                 print(f"{Fore.RED}Quiting...")
                                             else:
-                                                mobile = input(f"{Fore.LIGHTBLUE_EX}Enter your 10 digits mobile no.:\n")
+                                                print(f"{Fore.LIGHTBLUE_EX}Enter your 10 digits mobile no.:")
+                                                mobile = input()
                                                 if mobile == "q" or mobile == "Q" or len(mobile)!=10:
                                                     print(f"{Fore.RED}Quiting...")
                                                 else:
-                                                    con = input(f"{Fore.LIGHTRED_EX}Do you want to continue y/n?\n")
+                                                    print(f"{Fore.LIGHTRED_EX}Do you want to continue y/n?")
+                                                    con = input()
                                                     if con == "y" or con == "Y":
                                                         with open("lendbook.txt","a") as f:
                                                             f.write(f"{i}\n")
@@ -227,13 +241,15 @@ class lend_return_renew:
         q = open('lendbookdet.txt', "a")
         s = 0
         w = 0
-        inp = input(f"{Fore.LIGHTBLUE_EX}If you want to return the book enter [{Fore.LIGHTRED_EX}1{Fore.LIGHTBLUE_EX}] and if you want to renew enter [{Fore.LIGHTRED_EX}2{Fore.LIGHTBLUE_EX}]:\n")
+        print(f"{Fore.LIGHTBLUE_EX}If you want to return the book enter [{Fore.LIGHTRED_EX}1{Fore.LIGHTBLUE_EX}] and if you want to renew enter [{Fore.LIGHTRED_EX}2{Fore.LIGHTBLUE_EX}]:")
+        inp = input()
         if inp == "q" or inp == "Q":
             print(f"{Fore.RED}Quiting...")
         else:
             if inp == "1":
                 x = open("temp.txt", "w")
-                name = input(f"{Fore.LIGHTBLUE_EX}Enter your name:\n")
+                print(f"{Fore.LIGHTBLUE_EX}Enter your name:")
+                name = input()
                 if name == "q" or name == "Q":
                     print(f"{Fore.RED}Quiting...")
                 else:
@@ -265,21 +281,25 @@ class lend_return_renew:
                     os.rename("temp.txt", "lendbook.txt")
 
             elif inp == "2":
-                name = input(f"{Fore.LIGHTBLUE_EX}Enter your name:\n")
+                print(f"{Fore.LIGHTBLUE_EX}Enter your name:")
+                name = input()
                 if name == "q" or name == "Q":
                     print(f"{Fore.RED}Quiting...")
                 else:
                     for i in r:
                         if self in i:
-                            postal_code = input(f"{Fore.LIGHTBLUE_EX}Enter your 6 digits postal pin code:\n")
+                            print(f"{Fore.LIGHTBLUE_EX}Enter your 6 digits postal pin code:")
+                            postal_code = input()
                             if postal_code == "q" or postal_code == "Q" or len(postal_code)!=6:
                                 print(f"{Fore.RED}Quiting...")
                             else:
-                                city = input(f"{Fore.LIGHTBLUE_EX}Enter name of your city:\n")
+                                print(f"{Fore.LIGHTBLUE_EX}Enter name of your city:")
+                                city = input()
                                 if city == "q" or city == "Q":
                                     print(f"{Fore.RED}Quiting...")
                                 else:
-                                    mobile = input(f"{Fore.LIGHTBLUE_EX}Enter your 10 digits mobile no.:\n")
+                                    print(f"{Fore.LIGHTBLUE_EX}Enter your 10 digits mobile no.:")
+                                    mobile = input()
                                     if mobile == "q" or mobile == "Q" or len(mobile)!=10:
                                         print(f"{Fore.RED}Quiting...")
                                     else:
@@ -394,8 +414,10 @@ class book_search:
             print(
                 f"{Fore.LIGHTRED_EX}{Style.DIM}___________________________________________________________________________")
             if w != (s - 1):
-                print(f"\n{Fore.LIGHTRED_EX}{Style.BRIGHT}*Note{Fore.BLUE} -{Fore.CYAN} "
+                print(f"{Fore.LIGHTRED_EX}{Style.BRIGHT}*Note{Fore.BLUE} -{Fore.CYAN} "
                       f"S.no. is given according to book position in library")
+            print(
+                f"{Fore.LIGHTRED_EX}{Style.DIM}___________________________________________________________________________")
 
 #final
 class administrator(Abhash_lib,lend_return_renew,book_search):
@@ -405,12 +427,12 @@ class administrator(Abhash_lib,lend_return_renew,book_search):
         with open("lendbook.txt", "r") as f:
             z = len(f.readlines())
         with open("lendbook.txt", "r") as f:
-            r1 = f.readline()
             print(f"{Back.LIGHTRED_EX}{Fore.LIGHTWHITE_EX}{Style.BRIGHT}S.no.   Book I.D.                    Book Name                        ")
             print(f"{Fore.LIGHTRED_EX}{Style.DIM}______________________________________________________________________")
             if z==0:
                 print(f"{Fore.CYAN}                  No books borrowed yet\n")
             for i in range(z):
+                r1 = f.readline()
                 print(f"{Fore.LIGHTYELLOW_EX}{i + 1}. {Fore.LIGHTMAGENTA_EX}{r1[0:13]}{Fore.LIGHTCYAN_EX}{r1[13::]}", end='')
                 print(f"{Fore.LIGHTRED_EX}{Style.DIM}______________________________________________________________________")
 
@@ -467,7 +489,8 @@ class administrator(Abhash_lib,lend_return_renew,book_search):
         r = f.readlines()
         with open("libbookdet.txt","a") as x:
             w=0
-            _pass = input(f"{Fore.LIGHTBLUE_EX}Enter password to continue:\n")
+            print(f"{Fore.LIGHTBLUE_EX}Enter password to continue:")
+            _pass = input()
             if _pass=="14062004":
                 for i in r:
                     if self not in i:
@@ -478,8 +501,8 @@ class administrator(Abhash_lib,lend_return_renew,book_search):
                     print(f"{Fore.RED}Book not found")
                 if w>0:
                     print(F"{Fore.LIGHTGREEN_EX}Operation successful")
-                    x.write(f"Book removed on {time.asctime(time.localtime(time.time()))}\nBook I.D. = #{self}     "
-                        f"Book Name = {i[21::]}")
+                    x.write(f"Book removed on {time.asctime(time.localtime(time.time()))}\nBook I.D. = {self}     "
+                            f"Book Name = {i[21::]}")
                 q.close()
                 f.close()
                 os.remove("Booklist.txt")
@@ -490,8 +513,8 @@ class administrator(Abhash_lib,lend_return_renew,book_search):
                 print(f"{Fore.RED}Incorrect password")
 
 
-print(f"{Fore.BLACK}{Style.DIM}Project Library[Version 0.01.160421]")
-print(f"{Fore.BLACK}{Style.DIM}©2021 Abhash Chakraborty. Some right reserved")
+print(f"{Style.DIM}{Fore.LIGHTBLACK_EX}\nProject Library[Version 0.01.160421]")
+print(f"{Style.DIM}{Fore.LIGHTBLACK_EX}©2021 Abhash Chakraborty. Some right reserved\n\n")
 time.sleep(1)
 
 P = pyfiglet.figlet_format("WELCOME TO XYZ LIBRARY", font="digital")
@@ -519,24 +542,30 @@ while True:
             Abhash_lib.book_list()
             s+=1
         elif keyboard.is_pressed("2"):
-            n = input(f"\n{Fore.LIGHTBLUE_EX}Enter full Book Name:\n")
+            print(f"\n{Fore.LIGHTBLUE_EX}Enter full Book Name:")
+            n = input()
             Abhash_lib.add_book(n)
             s += 1
         elif keyboard.is_pressed("3"):
-            n = input(f"\n{Fore.LIGHTBLUE_EX}Enter Book Name or Book I.D.({Fore.LIGHTRED_EX}Book I.D. should start with # symbol{Fore.LIGHTBLUE_EX}):\n")
+            print(f"\n{Fore.LIGHTBLUE_EX}Enter Book Name or Book I.D.({Fore.LIGHTRED_EX}Book I.D. should start with # symbol{Fore.LIGHTBLUE_EX}):")
+            n = input()
             lend_return_renew.lend_book(n.upper())
             s += 1
         elif keyboard.is_pressed("4"):
-            n = input(f"\n{Fore.LIGHTBLUE_EX}Please enter Book I.D.({Fore.LIGHTRED_EX}Book I.D. should start with # symbol{Fore.LIGHTBLUE_EX}):\n")
+            print(f"\n{Fore.LIGHTBLUE_EX}Please enter Book I.D.({Fore.LIGHTRED_EX}Book I.D. should start with # symbol{Fore.LIGHTBLUE_EX}):")
+            n = input()
             lend_return_renew.return_renew_book(n)
             s += 1
         elif keyboard.is_pressed("5"):
-            n = input(f"\n{Fore.LIGHTBLUE_EX}Enter keywords to search book:\n")
+            print(f"\n{Fore.LIGHTBLUE_EX}Enter keywords to search book:")
+            n = input()
             book_search.book_search(n)
             s += 1
-        elif keyboard.is_pressed("Shift + Ctrl + Alt + a"):
-            n = input(f"\n{Fore.LIGHTBLUE_EX}Enter password:\n")
-            if n=="123456":
+        elif keyboard.is_pressed("Shift + Ctrl + Alt + 1"):
+            print(f"\n{Fore.YELLOW}Username:", end='')
+            m = input()
+            n = getpass()
+            if n=="123456" and m=="XYZ":
                 k=0
                 while k<1:
                     t = 0
@@ -566,22 +595,26 @@ while True:
                             t+=1
 
                         elif keyboard.is_pressed("2"):
-                            n = input(f"\n{Fore.LIGHTBLUE_EX}Enter full Book Name:\n")
+                            print(f"\n{Fore.LIGHTBLUE_EX}Enter full Book Name:")
+                            n = input()
                             administrator.add_book(n)
                             t += 1
 
                         elif keyboard.is_pressed("3"):
-                            n = input(f"\n{Fore.LIGHTBLUE_EX}Enter Book Name or Book I.D.({Fore.LIGHTRED_EX}Book I.D. should start with # symbol{Fore.LIGHTBLUE_EX}):\n")
-                            administrator.lend_book(n)
+                            print(f"\n{Fore.LIGHTBLUE_EX}Enter Book Name or Book I.D.({Fore.LIGHTRED_EX}Book I.D. should start with # symbol{Fore.LIGHTBLUE_EX}):")
+                            n = input()
+                            administrator.lend_book(n.upper())
                             t += 1
 
                         elif keyboard.is_pressed("4"):
-                            n = input(f"\n{Fore.LIGHTBLUE_EX}Please enter Book I.D.({Fore.LIGHTRED_EX}Book I.D. should start with # symbol{Fore.LIGHTBLUE_EX}):\n")
+                            print(f"\n{Fore.LIGHTBLUE_EX}Please enter Book I.D.({Fore.LIGHTRED_EX}Book I.D. should start with # symbol{Fore.LIGHTBLUE_EX}):")
+                            n = input()
                             administrator.return_renew_book(n)
                             t += 1
 
                         elif keyboard.is_pressed("5"):
-                            n = input(f"\n{Fore.LIGHTBLUE_EX}Enter keywords to search book:\n")
+                            print(f"\n{Fore.LIGHTBLUE_EX}Enter keywords to search book:")
+                            n = input()
                             administrator.book_search(n)
                             t += 1
 
@@ -601,7 +634,8 @@ while True:
                             t += 1
 
                         elif keyboard.is_pressed("9"):
-                            n = input(f"\n{Fore.LIGHTBLUE_EX}Enter Book I.D. to remove book:\n")
+                            print(f"\n{Fore.LIGHTBLUE_EX}Enter Book I.D. to remove book:")
+                            n = input()
                             administrator.remove_book(n)
                             t += 1
 
