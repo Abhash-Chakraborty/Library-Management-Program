@@ -539,13 +539,12 @@ while True:
             if n=="123456":
                 k=0
                 while k<1:
-                    time.sleep(2)
                     t = 0
-                    print(f"Your are in administrator mode")
+                    P = pyfiglet.figlet_format("\nADMINISTRATOR MODE", font="digital")
+                    print(f"{Style.BRIGHT}{Fore.LIGHTBLACK_EX}{P}")
+                    time.sleep(1)
                     print(
-                        f"\nTo list book press [1], to add book press [2], to borrow book press [3], to return/renew book press [4], "
-                        "to search book press [5], to read lend book press [6], to read lend book details press [7], "
-                        "to read library book details press [8], to remove book press [9]")
+                        f"{Fore.LIGHTRED_EX}{Style.BRIGHT}\n+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
                     print(f"{Fore.LIGHTYELLOW_EX}"
                           f"           *To list book press [{Fore.LIGHTRED_EX}1{Fore.LIGHTYELLOW_EX}]\n"
                           f"           *To add book press [{Fore.LIGHTRED_EX}2{Fore.LIGHTYELLOW_EX}]\n"
@@ -558,56 +557,65 @@ while True:
                           f"           *To remove book press [{Fore.LIGHTRED_EX}9{Fore.LIGHTYELLOW_EX}]\n"
                           f"           You can enter [{Fore.LIGHTRED_EX}q{Fore.LIGHTYELLOW_EX}] to cancel any operation\n"
                           f"           Press [{Fore.LIGHTRED_EX}Esc{Fore.LIGHTYELLOW_EX}] to exit library")
+                    print(
+                        f"{Fore.LIGHTRED_EX}{Style.BRIGHT}+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n")
                     while t<1:
                         if keyboard.is_pressed("1"):
+                            print()
                             administrator.book_list()
                             t+=1
 
                         elif keyboard.is_pressed("2"):
-                            n = input(f"\nEnter full book name:\n")
+                            n = input(f"\n{Fore.LIGHTBLUE_EX}Enter full Book Name:\n")
                             administrator.add_book(n)
                             t += 1
 
                         elif keyboard.is_pressed("3"):
-                            n = input(f"\nEnter Book Name or Book I.D.(Book I.D. should start with # symbol):\n")
+                            n = input(f"\n{Fore.LIGHTBLUE_EX}Enter Book Name or Book I.D.({Fore.LIGHTRED_EX}Book I.D. should start with # symbol{Fore.LIGHTBLUE_EX}):\n")
                             administrator.lend_book(n)
                             t += 1
 
                         elif keyboard.is_pressed("4"):
-                            n = input(f"\nPlease enter Book I.D.(Book I.D. should start with # symbol):\n")
+                            n = input(f"\n{Fore.LIGHTBLUE_EX}Please enter Book I.D.({Fore.LIGHTRED_EX}Book I.D. should start with # symbol{Fore.LIGHTBLUE_EX}):\n")
                             administrator.return_renew_book(n)
                             t += 1
 
                         elif keyboard.is_pressed("5"):
-                            n = input(f"\nEnter keywords to search book:\n")
+                            n = input(f"\n{Fore.LIGHTBLUE_EX}Enter keywords to search book:\n")
                             administrator.book_search(n)
                             t += 1
 
                         elif keyboard.is_pressed("6"):
+                            print()
                             administrator.read_lend()
                             t+=1
 
                         elif keyboard.is_pressed("7"):
+                            print()
                             administrator.lend_bookdet()
                             t+=1
 
                         elif keyboard.is_pressed("8"):
+                            print()
                             administrator.lib_bookdet()
                             t += 1
 
                         elif keyboard.is_pressed("9"):
-                            n = input(f"\nEnter Book I.D. to remove book:\n")
+                            n = input(f"\n{Fore.LIGHTBLUE_EX}Enter Book I.D. to remove book:\n")
                             administrator.remove_book(n)
                             t += 1
 
                         elif keyboard.is_pressed("Esc"):
+                            os.system("cls")
                             k+=1
                             break
+
 
             else:
                 print(f"{Fore.RED}Wrong password")
                 break
         elif keyboard.is_pressed("Esc"):
+            time.sleep(2)
             break
     if keyboard.is_pressed("Esc"):
         break
